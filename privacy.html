@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — Chess Journal</title>
+<meta name="description" content="Chess Journal runs entirely on your device. This page explains the few network calls the app makes and why." />
+<link rel="canonical" href="https://sazardev.github.io/chess-journal/privacy.html" />
+<link rel="icon" type="image/svg+xml" href="./assets/img/brand/favicon.svg" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <nav class="wrap nav">
+    <a class="brand" href="./index.html">
+      <img src="./assets/img/brand/app-icon.svg" alt="" width="26" height="26" />
+      Chess Journal
+    </a>
+    <div class="nav-links">
+      <a href="./index.html#features">Features</a>
+      <a href="./index.html#pricing">Pricing</a>
+      <a href="./index.html#download">Download</a>
+      <a href="./changelog.html">Changelog</a>    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+      <button class="icon-btn nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Privacy Policy</span>
+      <h1 style="font-size: clamp(30px, 4.4vw, 44px)">Your games never leave your device.</h1>
+      <p class="lede">Last updated 2026-07-08.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+
+      <h2>1. The short version</h2>
+      <p>Chess Journal does not collect, transmit, or store your data on any server it controls. There is no telemetry, no analytics SDK, and no crash reporting. Your games, analysis, journal entries, and settings live only on your device (or in browser <code>localStorage</code>, on the web build). No account or sign-in is required or offered.</p>
+
+      <h2>2. The network calls the app does make</h2>
+      <p>A handful of features are opt-in and only ever contact the specific third party needed for that feature — never a Chess Journal-operated server, because there isn't one:</p>
+      <ul>
+        <li><strong>Chess.com import</strong> — when you enter a Chess.com username and trigger an import, the app calls Chess.com's public API to fetch that account's public game archives. No credentials are sent; only the username and date range you provide.</li>
+        <li><strong>Lichess import</strong> — same shape, against Lichess's public API.</li>
+        <li><strong>Update checks (desktop)</strong> — the app checks for newer releases so it can offer a one-click update.</li>
+        <li><strong>On-device AI model download</strong> — the first time you enable AI commentary, the app downloads the model file (Qwen2.5 or Gemma 3) from its public host. After that, inference runs fully offline.</li>
+        <li><strong>Checkout &amp; purchase verification</strong> — once live, unlocking the paid features redirects to a third-party checkout page (desktop/Linux) or the native Google Play purchase sheet (Android). Payment details are handled entirely by that provider; Chess Journal never sees your card details. The app verifies the resulting license key or purchase token locally, on your device.</li>
+      </ul>
+      <p>Fonts are loaded from Fontshare and Google Fonts CDNs, which may see your IP address as a normal side effect of serving a web font — the same as any website using a font CDN.</p>
+
+      <h2>3. What we don't do</h2>
+      <ul>
+        <li>We don't run analytics or track how you use the app.</li>
+        <li>We don't sell or share data, because we don't collect any to begin with.</li>
+        <li>We don't sync your library to any cloud service.</li>
+        <li>We don't require an account.</li>
+      </ul>
+
+      <h2>4. This website</h2>
+      <p>This site loads its own changelog and version number from files served alongside it — no third-party API is involved. No cookies or analytics are set by this site.</p>
+
+      <h2>5. Children's privacy</h2>
+      <p>Chess Journal does not knowingly collect personal information from anyone, including children, because it does not collect personal information from anyone. The app has no chat, no online play against strangers, and no ads.</p>
+
+      <h2>6. Changes to this policy</h2>
+      <p>If the network calls this app makes ever change, this page will be updated with a new "last updated" date before that change ships.</p>
+
+      <h2>7. Contact</h2>
+      <p>Privacy questions are best raised by emailing <a href="mailto:sazardev@gmail.com">sazardev@gmail.com</a>.</p>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-bottom">
+    <span>© 2026 sazardev. Chess Journal is proprietary software — see <a href="./terms.html">Terms &amp; License</a>.</span>
+    <a href="./index.html">← Back to Chess Journal</a>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js"></script>
+</body>
+</html>

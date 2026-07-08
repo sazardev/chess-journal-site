@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chess Journal — your chess analysis lab, library, and study companion</title>
+<meta name="description" content="Chess Journal is free to play on Windows, Linux, and Android — record and import your games, then unlock Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles for a one-time $5, no subscription, ever." />
+<meta name="keywords" content="chess app, free chess app, chess analysis, stockfish, chess study, chess puzzles, chess database, chess engine, offline chess, freemium chess app, no subscription chess app, local ai chess" />
+<link rel="canonical" href="https://sazardev.github.io/chess-journal/" />
+<link rel="icon" type="image/svg+xml" href="./assets/img/brand/favicon.svg" />
+<link rel="apple-touch-icon" href="./assets/img/brand/apple-touch-icon.png" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Chess Journal" />
+<meta property="og:title" content="Chess Journal — your chess analysis lab, library, and study companion" />
+<meta property="og:description" content="Free to play on Windows, Linux, and Android. A one-time $5 unlocks Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles. No subscription, ever." />
+<meta property="og:image" content="https://sazardev.github.io/chess-journal/assets/img/brand/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chess Journal — your chess analysis lab, library, and study companion" />
+<meta name="twitter:description" content="Free to play on Windows, Linux, and Android. A one-time $5 unlocks Stockfish, local AI commentary, 26,000+ games, and 5,000+ puzzles." />
+<meta name="twitter:image" content="https://sazardev.github.io/chess-journal/assets/img/brand/og-image.png" />
+
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./assets/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Chess Journal",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Windows, Linux, Android",
+  "description": "Free-to-play chess analysis lab, game library, and study companion. A one-time $5 unlock adds Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles.",
+  "url": "https://sazardev.github.io/chess-journal/",
+  "offers": [
+    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free to play" },
+    { "@type": "Offer", "price": "5", "priceCurrency": "USD", "description": "One-time unlock for all pro features" }
+  ],
+  "author": { "@type": "Organization", "name": "sazardev" }
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <nav class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="./assets/img/brand/app-icon.svg" alt="" width="26" height="26" />
+      Chess Journal
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#showcase">Demo</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#download">Download</a>
+      <a href="./changelog.html">Changelog</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+      <button class="icon-btn nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Free to play · $5 unlocks the rest</span>
+        <h1>Your chess analysis lab, library, and study companion.</h1>
+        <p class="lede">
+          Play, record, and import your games for free — forever. A one-time $5
+          unlocks Stockfish at full depth, on-device AI commentary, 26,000+ games,
+          and 5,000+ puzzles. No subscription, no cloud, no ads.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#download">Download Free</a>
+          <a class="btn btn-ghost" href="#pricing">See what $5 unlocks</a>
+        </div>
+        <p class="hero-meta">
+          <span data-latest-version>Latest release</span> ·
+          Windows · Linux · Android · <a href="./changelog.html">full changelog →</a>
+        </p>
+      </div>
+      <div class="hero-board-wrap">
+        <div class="hero-board" id="hero-board" role="img" aria-label="Animated chess board demonstrating the Torre Attack opening"></div>
+        <p class="hero-caption" id="hero-board-caption">Starting position</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST BAR ================= -->
+  <section class="trust-bar">
+    <div class="wrap trust-row">
+      <span class="chip chip-free">Windows</span>
+      <span class="chip chip-free">Linux</span>
+      <span class="chip chip-free">Android</span>
+      <span class="chip">Free to play</span>
+      <span class="chip">$5 one-time unlock</span>
+      <span class="chip">No subscription, ever</span>
+      <span class="chip">100% offline analysis</span>
+      <span class="chip">Actively developed</span>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section id="numbers">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">By the numbers</span>
+        <h2>More chess than you can study in a year.</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat"><div class="stat-value">26,000+</div><div class="stat-label">Games in the library</div></div>
+        <div class="stat"><div class="stat-value">9,254</div><div class="stat-label">Classic master games</div></div>
+        <div class="stat"><div class="stat-value">11,336</div><div class="stat-label">Theory study games, 37 categories</div></div>
+        <div class="stat"><div class="stat-value">5,037</div><div class="stat-label">Puzzles, rated 800–2500</div></div>
+        <div class="stat"><div class="stat-value">5</div><div class="stat-label">Stockfish presets, Eco → Max</div></div>
+        <div class="stat"><div class="stat-value">6</div><div class="stat-label">Assistive Coach ELO levels</div></div>
+        <div class="stat"><div class="stat-value">7</div><div class="stat-label">Color themes + infinite HSL tuning</div></div>
+        <div class="stat"><div class="stat-value">$5</div><div class="stat-label">Once, for everything else, forever</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Features</span>
+        <h2>Everything a serious chess habit needs.</h2>
+        <p class="lede">Play and journal for free, forever. A single $5 unlock turns on engine depth, local AI, and the full library.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-top"><span class="glyph">♟</span><span class="chip chip-free">Free</span></div>
+          <h3>Play, record &amp; import</h3>
+          <p>Move the pieces or type moves — every game autosaves. Import from Chess.com or Lichess, or load PGN/FEN/JSON.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">♞</span><span class="chip chip-unlock">Eco free · rest $5</span></div>
+          <h3>Stockfish engine analysis</h3>
+          <p>The free "Eco" preset gives an eval bar, best line, and candidates. Unlock Fast, Balanced, Deep, and Max, plus the interactive eval graph and whole-game analyzer.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">◆</span><span class="chip chip-unlock">$5 unlock</span></div>
+          <h3>On-device AI commentary</h3>
+          <p>Qwen2.5 1.5B or Gemma 3 1B run locally via llama.cpp (desktop) or Transformers.js WASM (Android). No cloud, no API key, nothing leaves your device.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">♜</span><span class="chip chip-unlock">Yours free · rest $5</span></div>
+          <h3>26,000+ game library</h3>
+          <p>Your own games are free, autosaved, and searchable forever. Unlock once to add 9,254 classics, 11,336 theory games, and 5,037 puzzles.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">✦</span><span class="chip chip-unlock">$5 unlock</span></div>
+          <h3>Puzzle system</h3>
+          <p>5,037 mate puzzles rated 800–2500. Normal, Random, and adaptive Streak modes (+80 ELO per solve). Best streak saved forever.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">▤</span><span class="chip chip-unlock">$5 unlock</span></div>
+          <h3>Theory / study system</h3>
+          <p>11,336 master games across 37 categories: openings, middlegame, endgames, book collections. Progress tracked per game.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">♚</span><span class="chip chip-unlock">$5 unlock</span></div>
+          <h3>Assistive Coach</h3>
+          <p>Six ELO levels (800 → 2500). The engine plays at your level, then explains every move: centipawn loss, best move, positional summary.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">◈</span><span class="chip chip-free">Free</span></div>
+          <h3>Opening detection</h3>
+          <p>A 515 KB offline ECO database names the opening as you play, with an "out of book" marker and per-opening W/L/D stats.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">⌕</span><span class="chip chip-free">Free</span></div>
+          <h3>Smart natural-language search</h3>
+          <p>"catalan where I didn't blunder before move 25." Understands results, opponents, dates, ratings, castling, promotions, brilliancies — free, on your own library.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">⇄</span><span class="chip chip-free">Free</span></div>
+          <h3>Chess.com &amp; Lichess import</h3>
+          <p>Enter a username and date range. Fetches your archives, detects your color, imports with full metadata. No unlock needed.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">▦</span><span class="chip chip-free">Free</span></div>
+          <h3>Board editor</h3>
+          <p>Set up any position by hand. Castling rights and en passant targets are derived automatically.</p>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="glyph">◐</span><span class="chip chip-free">Free</span></div>
+          <h3>Theme system</h3>
+          <p>Seven presets plus infinite HSL fine-tuning, tinting every surface, square, and piece. Light, dark, and system modes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCREENSHOT SHOWCASE ================= -->
+  <section id="showcase">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">See it in action</span>
+        <h2>The real app. No mockups.</h2>
+        <p class="lede">Every screenshot below is a real capture of Chess Journal running on desktop and Android.</p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-panel="panel-desktop">Desktop</button>
+        <button class="tab" role="tab" aria-selected="false" data-panel="panel-mobile">Android</button>
+      </div>
+
+      <div class="tabpanel" id="panel-desktop">
+        <div class="shot-grid">
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/board-game.png" alt="Chess Journal desktop — board mid-game with move history" /><figcaption>Board &amp; move history</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/engine-assist.png" alt="Stockfish engine analysis panel" /><figcaption>Engine analysis</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/game-report.png" alt="Game report with evaluation graph and move quality marks" /><figcaption>Game report &amp; eval graph</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/library-classics.png" alt="Classics library with legendary games" /><figcaption>Classics library</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/library-puzzles.png" alt="Puzzle library" /><figcaption>Puzzle library</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/puzzle.png" alt="Solving a mate puzzle" /><figcaption>Solving a puzzle</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/library-theory.png" alt="Theory study system" /><figcaption>Theory / study</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/board-position-editor.png" alt="Board position editor" /><figcaption>Board editor</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/annotation-arrow.png" alt="Arrow annotation on the board" /><figcaption>Annotations</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/move-journal-saved.png" alt="Journal block attached to a move" /><figcaption>Journal blocks</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/profile-stats.png" alt="Profile statistics dashboard" /><figcaption>Profile stats</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/export-pdf-preset-full.png" alt="PDF export dialog" /><figcaption>PDF export</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/settings-ai.png" alt="On-device AI settings" /><figcaption>On-device AI settings</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/share-panel.png" alt="Share and export panel" /><figcaption>Share &amp; export</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/log-viewer.png" alt="Categorized log viewer" /><figcaption>Log viewer</figcaption></figure>
+          <figure class="shot"><img loading="lazy" src="./assets/img/screenshots/desktop/shortcuts.png" alt="Keyboard shortcuts overlay" /><figcaption>Keyboard shortcuts</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="tabpanel" id="panel-mobile" hidden>
+        <div class="shot-grid">
+          <figure class="shot portrait"><img loading="lazy" src="./assets/img/screenshots/mobile/board-game.png" alt="Chess Journal on Android — board mid-game" /><figcaption>Board on Android</figcaption></figure>
+          <figure class="shot portrait"><img loading="lazy" src="./assets/img/screenshots/mobile/library-my-games.png" alt="My Games library on Android" /><figcaption>My Games</figcaption></figure>
+          <figure class="shot portrait"><img loading="lazy" src="./assets/img/screenshots/mobile/library-puzzles.png" alt="Puzzle library on Android" /><figcaption>Puzzle library</figcaption></figure>
+          <figure class="shot portrait"><img loading="lazy" src="./assets/img/screenshots/mobile/puzzle.png" alt="Solving a puzzle on Android" /><figcaption>Solving a puzzle</figcaption></figure>
+          <figure class="shot portrait"><img loading="lazy" src="./assets/img/screenshots/mobile/move-journal-saved.png" alt="Journal block on Android" /><figcaption>Journal on Android</figcaption></figure>
+          <figure class="shot portrait"><img loading="lazy" src="./assets/img/screenshots/mobile/profile-stats.png" alt="Profile stats on Android" /><figcaption>Profile stats</figcaption></figure>
+          <figure class="shot portrait"><img loading="lazy" src="./assets/img/screenshots/mobile/settings-ai.png" alt="AI settings on Android" /><figcaption>AI settings</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIDEO SHOWCASE ================= -->
+  <section id="videos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Watch it move</span>
+        <h2>Demo reels, straight from the app's own board.</h2>
+        <p class="lede">Every clip below is rendered from the real piece set and real opening theory — nothing staged in a design tool.</p>
+      </div>
+
+      <figure class="video-feature">
+        <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/chess-journal-demo.jpg">
+          <source src="./assets/video/chess-journal-demo.mp4" type="video/mp4" />
+        </video>
+        <figcaption>Chess Journal — full feature walkthrough.</figcaption>
+      </figure>
+
+      <div class="video-grid">
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/chess-journal-welcome.jpg">
+            <source src="./assets/video/chess-journal-welcome.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Welcome — first launch</figcaption>
+        </figure>
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/chess-journal-impact.jpg">
+            <source src="./assets/video/chess-journal-impact.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Chess Journal — the pitch</figcaption>
+        </figure>
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/opening-ruy-lopez.jpg">
+            <source src="./assets/video/opening-ruy-lopez.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Opening explainer — Ruy Lopez</figcaption>
+        </figure>
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/opening-kings-gambit.jpg">
+            <source src="./assets/video/opening-kings-gambit.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Opening explainer — King's Gambit</figcaption>
+        </figure>
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/classic-opera-game.jpg">
+            <source src="./assets/video/classic-opera-game.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Classic — Morphy's Opera Game</figcaption>
+        </figure>
+        <figure class="video-card">
+          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/classic-game-of-the-century.jpg">
+            <source src="./assets/video/classic-game-of-the-century.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Classic — Byrne vs. Fischer, "Game of the Century"</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">How it works</span>
+        <h2>From download to deep analysis in five steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">01</div><h4>Download</h4><p>No signup, no account. A clean board, ready to play — free.</p></div>
+        <div class="step"><div class="step-num">02</div><h4>Play or import</h4><p>Play a game, import PGN/FEN, or pull from Chess.com or Lichess — all free.</p></div>
+        <div class="step"><div class="step-num">03</div><h4>Unlock when ready</h4><p>A one-time $5 payment turns on Stockfish's full depth, AI commentary, and the full library.</p></div>
+        <div class="step"><div class="step-num">04</div><h4>Analyze</h4><p>Stockfish evaluates every position. AI commentary explains every move. The eval graph tells the story.</p></div>
+        <div class="step"><div class="step-num">05</div><h4>Study &amp; improve</h4><p>9,254 classics. 11,336 theory games. 5,037 puzzles. The coach guides you the rest of the way.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="kicker">Pricing</span>
+        <h2>Free to play. $5, once, unlocks everything else.</h2>
+        <p class="lede">No renewals. No second paywall. No in-app purchases beyond this one unlock — ever.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-col">
+          <span class="chip chip-free">Free forever</span>
+          <div class="price-tag">$0</div>
+          <p>Play and record your own games, on every platform, no time limit.</p>
+          <ul class="check-list">
+            <li>Play, record, and autosave your own games</li>
+            <li>Import from Chess.com and Lichess</li>
+            <li>Board editor, 7 themes, autoplay</li>
+            <li>Live opening-name detection (offline ECO database)</li>
+            <li>Stockfish "Eco" preset — a quick eval on any position</li>
+            <li>Smart natural-language search on your own library</li>
+            <li>PGN / FEN / JSON import &amp; export, PNG export</li>
+            <li>No account, no ads, no time limit</li>
+          </ul>
+        </div>
+        <div class="pricing-col">
+          <span class="chip chip-unlock">$5 · one time</span>
+          <div class="price-tag">$5</div>
+          <p>Unlock everything else, forever — including every future update.</p>
+          <ul class="check-list">
+            <li>Stockfish at full depth — Fast, Balanced, Deep, Max presets</li>
+            <li>Whole-game analyzer with move-quality marks (!! ! ?! ? ??)</li>
+            <li>On-device AI commentary — Qwen2.5 / Gemma 3, no cloud</li>
+            <li>9,254 classic master games</li>
+            <li>11,336 theory study games across 37 categories</li>
+            <li>5,037 puzzles — Normal, Random, and Streak modes</li>
+            <li>Assistive Coach — 6 ELO levels, engine plays at your level</li>
+            <li>PDF export &amp; the Profile / Opening-stats dashboards</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Where things stand today:</strong> the free tier above is exactly
+        what you get right now if you download Chess Journal. The $5 unlock is
+        built and works end-to-end in testing, but the storefronts aren't public
+        yet — the desktop/Linux checkout and the Android listing are both being
+        finalized. Download and play for free today; the unlock button will go
+        live here and in-app the moment checkout opens, at the same $5 price on
+        every platform.
+      </div>
+
+      <div class="table-wrap" style="margin-top:32px">
+        <table>
+          <thead>
+            <tr><th></th><th>Chess Journal</th><th>Typical subscription</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>To play &amp; journal</td><td class="yes">Free</td><td class="no">Often paywalled from day one</td></tr>
+            <tr><td>To unlock everything</td><td class="yes">$5, once</td><td class="no">$50–$100+ / year</td></tr>
+            <tr><td>Renewals</td><td class="yes">None, ever</td><td class="no">Every month or year</td></tr>
+            <tr><td>Updates</td><td class="yes">Included forever</td><td class="no">Often gated behind higher tiers</td></tr>
+            <tr><td>Ads</td><td class="yes">None</td><td class="no">Common on free tiers</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DOWNLOAD ================= -->
+  <section id="download">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="kicker">Download</span>
+        <h2>Get Chess Journal.</h2>
+        <p class="lede"><span data-latest-version>Chess Journal</span> · Windows, Linux, and Android.</p>
+      </div>
+
+      <div class="callout" style="max-width:640px; margin-inline:auto;">
+        <strong>Public downloads aren't live yet.</strong> Chess Journal is
+        still finishing its build and release pipeline — this section will
+        turn into real download buttons the moment it is. Check back soon.
+      </div>
+
+      <div class="platform-grid" style="margin-top:32px">
+        <div class="platform-card">
+          <span class="platform-icon">⊞</span>
+          <h3>Windows</h3>
+          <p>Per-user installer with auto-updates. No admin rights required.</p>
+          <a class="btn btn-disabled" aria-disabled="true" href="#download" onclick="return false">Coming soon</a>
+        </div>
+        <div class="platform-card">
+          <span class="platform-icon">▧</span>
+          <h3>Linux</h3>
+          <p>Portable AppImage — no installation needed. Works on most modern distributions.</p>
+          <a class="btn btn-disabled" aria-disabled="true" href="#download" onclick="return false">Coming soon</a>
+        </div>
+        <div class="platform-card">
+          <span class="platform-icon">▣</span>
+          <h3>Android</h3>
+          <p>APK sideload, with a Google Play listing planned.</p>
+          <a class="btn btn-disabled" aria-disabled="true" href="#download" onclick="return false">Coming soon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMPARISON ================= -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">How it compares</span>
+        <h2>One app, four pillars no single competitor covers.</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Feature</th><th class="brand-col">Chess Journal</th><th>Chess.com</th><th>Lichess</th><th>ChessBase</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Price</td><td class="yes">Free to play / $5 unlock</td><td class="no">$14.99/mo</td><td class="no">Free / Patron ~$5/mo</td><td class="no">$500+</td></tr>
+            <tr><td>Desktop app</td><td class="yes">Yes (Windows, Linux)</td><td class="no">Web only</td><td class="no">Web only</td><td class="yes">Yes</td></tr>
+            <tr><td>Android app</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
+            <tr><td>On-device AI commentary</td><td class="yes">Yes, local</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><td>Offline analysis</td><td class="yes">Full</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td></tr>
+            <tr><td>Built-in game library</td><td class="yes">26,000+</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
+            <tr><td>Natural-language search</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><td>No subscription, ever</td><td class="yes">Free + $5 unlock</td><td class="no">No</td><td class="no">Partial</td><td class="yes">Yes ($500+ upfront)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHO IT'S FOR ================= -->
+  <section id="who">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Who it's for</span>
+        <h2>Built for people tired of subscriptions and cloud dependency.</h2>
+      </div>
+      <div class="persona-grid">
+        <article class="persona-card">
+          <span class="kicker">The club player</span>
+          <p class="persona-quote">"Free to play. $5 once unlocks Stockfish at any depth. My games, my data. No subscription."</p>
+        </article>
+        <article class="persona-card">
+          <span class="kicker">The casual player</span>
+          <p class="persona-quote">"Free to start, no commitment. When I'm ready, $5 unlocks AI explanations in plain language."</p>
+        </article>
+        <article class="persona-card">
+          <span class="kicker">The chess coach</span>
+          <p class="persona-quote">"Free to try, ChessBase-level analysis for $5. I can recommend it to every student without hesitation."</p>
+        </article>
+        <article class="persona-card">
+          <span class="kicker">The parent</span>
+          <p class="persona-quote">"Safe, ad-free, no chat, free to try. One predictable $5 payment instead of another bill to remember."</p>
+        </article>
+        <article class="persona-card">
+          <span class="kicker">The developer</span>
+          <p class="persona-quote">"Free to play, fair $5 unlock straight to an indie dev. No ads, no data harvesting, modern stack."</p>
+        </article>
+        <article class="persona-card">
+          <span class="kicker">The classic-chess enthusiast</span>
+          <p class="persona-quote">"Free to try. $5 unlocks 9,254 classic games from Morphy to Carlsen — clean, offline, no bills."</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRIVACY ================= -->
+  <section id="privacy-blurb">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="kicker">Privacy &amp; security</span>
+        <h2>Your games never leave your device.</h2>
+        <p class="lede">
+          Engine analysis, AI commentary, your library, puzzles, and theory all run
+          entirely offline. No telemetry, no analytics, no cloud sync — ever, on the
+          free tier or unlocked. Read the full <a href="./privacy.html">Privacy Policy</a>
+          and <a href="./terms.html">Terms &amp; License</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DONATE ================= -->
+  <section id="donate">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="kicker">Support the project</span>
+        <h2>Chess Journal is built by one person.</h2>
+        <p class="lede">The $5 unlock is the main way to support development. If you'd like to do more, here's another option.</p>
+      </div>
+      <div class="donate-grid">
+        <article class="donate-card">
+          <h3>Unlock for $5</h3>
+          <p>The most direct way to support ongoing development — coming soon, see <a href="#pricing">Pricing</a>.</p>
+        </article>
+        <article class="donate-card">
+          <h3>Get in touch</h3>
+          <p>Feedback, ideas, or just want to say hi — always welcome.</p>
+          <a class="btn btn-ghost btn-sm" href="mailto:sazardev@gmail.com">Email sazardev@gmail.com</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHANGELOG TEASER ================= -->
+  <section id="changelog">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Always shipping</span>
+        <h2>Recent changes.</h2>
+        <p class="lede">Pulled live from the project's own <code>CHANGELOG.md</code> — never manually duplicated.</p>
+      </div>
+      <div id="changelog-teaser">
+        <p>Loading changelog…</p>
+      </div>
+      <p style="margin-top:24px"><a class="btn btn-ghost" href="./changelog.html">See the full changelog →</a></p>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>Questions, answered.</h2>
+      </div>
+
+      <details class="faq-item">
+        <summary>Is Chess Journal really free?</summary>
+        <p>Yes. Download it and play — record your games, import from Chess.com or Lichess, browse your library, edit positions, and switch themes, all free forever. A one-time $5 payment unlocks Stockfish's full depth, on-device AI commentary, the Classics and Theory libraries, all 5,037 puzzles, and the Assistive Coach.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I buy the $5 unlock right now?</summary>
+        <p>Not yet through this site or the app — the checkout (LemonSqueezy on Windows/Linux, Google Play Billing on Android) is built and tested internally but the storefronts aren't public. Download and use the free tier today; this page and the in-app unlock screen will go live the moment checkout opens.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What exactly does the $5 unlock?</summary>
+        <p>Stockfish presets beyond "Eco" (Fast, Balanced, Deep, Max), the whole-game analyzer and move-quality report, on-device AI commentary, 9,254 classic games, 11,336 theory games, 5,037 puzzles, the Assistive Coach, PDF export, and the Profile/Opening-stats dashboards. Every future update to any of it is included.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it require internet?</summary>
+        <p>No, for both the free and unlocked features — engine analysis, AI commentary, the game library, puzzles, and theory all work offline. Only Chess.com/Lichess import, checkout, and update checks need internet.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What platforms are supported?</summary>
+        <p>Windows (installer), Linux (AppImage), Android (APK today, Play Store listing coming) — free to play on all three, same $5 unlock everywhere. iOS/macOS are not currently available.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does AI commentary work without the cloud?</summary>
+        <p>Chess Journal downloads a small language model (Qwen2.5 1.5B or Gemma 3 1B) to your device once you've unlocked it. All inference runs locally via llama.cpp (desktop) or Transformers.js WASM (Android).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my data private?</summary>
+        <p>Yes. Everything stays on your device, free tier or unlocked. No telemetry, no analytics, no cloud sync. Your games, your analysis, your data. See the <a href="./privacy.html">Privacy Policy</a> for the few network calls the app does make (imports, update checks, checkout).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I have to pay again for future updates?</summary>
+        <p>No. Your one-time $5 unlock covers every update Chess Journal ever ships to the unlocked features — new puzzles, new models, all of it. One payment, no renewals.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is Chess Journal open source?</summary>
+        <p>No — Chess Journal is proprietary, closed-source software. See <a href="./terms.html">Terms &amp; License</a> for what the free tier and the $5 unlock each allow.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Have feedback or found a bug?</summary>
+        <p>Bug reports and feature requests are always welcome — email <a href="mailto:sazardev@gmail.com">sazardev@gmail.com</a> and it'll directly shape what ships next.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">✕</button>
+  <img src="" alt="" />
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">
+          <img src="./assets/img/brand/app-icon.svg" alt="" width="24" height="24" />
+          Chess Journal
+        </div>
+        <p style="font-size:14px; margin-top:12px; max-width:32ch; color:rgba(255,255,255,0.55);">
+          Analyze. Study. Improve. Free to play — $5 once unlocks the rest.
+        </p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#download">Download</a></li>
+          <li><a href="./changelog.html">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:sazardev@gmail.com">sazardev@gmail.com</a></li>
+          <li><a href="#donate">Support the project</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="./terms.html">Terms &amp; License</a></li>
+          <li><a href="./privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 sazardev. Chess Journal is proprietary software — see Terms &amp; License.</span>
+      <span>
+        <a href="https://v2.tauri.app/" target="_blank" rel="noopener">Tauri 2</a>
+        ·
+        <a href="https://stockfishchess.org/" target="_blank" rel="noopener">Stockfish</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/js/hero-board.js"></script>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
