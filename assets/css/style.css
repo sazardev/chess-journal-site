@@ -1041,9 +1041,10 @@ details.faq-item p {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  width: min(420px, 100%);
+  width: min(560px, 100%);
   aspect-ratio: 1;
-  border: 1px solid var(--c-black);
+  margin-inline: auto;
+  transition: opacity 220ms ease;
 }
 
 .hero-board .sq {
