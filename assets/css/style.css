@@ -236,7 +236,10 @@ header.site {
   gap: 14px;
 }
 
-.nav-toggle {
+/* Compound selector so this reliably beats the plain .icon-btn rule below —
+   two same-specificity single-class rules would otherwise resolve by source
+   order, which previously left the toggle visible at every width. */
+.icon-btn.nav-toggle {
   display: none;
 }
 
@@ -264,8 +267,8 @@ header.site {
     border-bottom: 1px solid var(--c-gray-100);
   }
 
-  .nav-toggle {
-    display: block;
+  .icon-btn.nav-toggle {
+    display: inline-flex;
   }
 }
 
@@ -393,6 +396,12 @@ header.site {
 
 .chip-soon {
   border-style: dashed;
+}
+
+.chip-solid {
+  background: var(--c-black);
+  border-color: var(--c-black);
+  color: var(--c-white);
 }
 
 /* ---------- trust bar ---------- */
@@ -658,32 +667,104 @@ header.site {
   cursor: pointer;
 }
 
-/* ---------- video grid ---------- */
+/* ---------- video showcase ---------- */
 
-.video-feature {
+.video-hero {
+  position: relative;
   border: 1px solid var(--c-gray-200);
+  margin-bottom: 20px;
+}
+
+.video-hero video {
+  width: 100%;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.video-hero-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+.video-hero figcaption {
+  padding: 18px 20px;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--c-black);
+  border-top: 1px solid var(--c-gray-200);
+}
+
+@media (max-width: 640px) {
+  .video-hero figcaption {
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+}
+
+/* pitch + full walkthrough: same landscape footage, one step down from the hero */
+
+.video-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   margin-bottom: 40px;
 }
 
-.video-feature video {
-  width: 100%;
-  background: #000;
+@media (max-width: 700px) {
+  .video-row {
+    grid-template-columns: 1fr;
+  }
 }
 
-.video-feature figcaption {
+.video-wide {
+  border: 1px solid var(--c-gray-200);
+  overflow: hidden;
+  transition: border-color 200ms ease;
+}
+
+.video-wide:hover {
+  border-color: var(--c-black);
+}
+
+.video-wide video {
+  width: 100%;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: brightness(0.62);
+  transition:
+    filter 300ms ease,
+    transform 400ms ease;
+}
+
+.video-wide:hover video {
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+.video-wide figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   padding: 14px 18px;
   font-size: 14px;
   color: var(--c-gray-600);
   border-top: 1px solid var(--c-gray-200);
 }
 
+/* opening / classic clips: quiet until hovered, then come to life */
+
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -697,6 +778,12 @@ header.site {
 
 .video-card {
   border: 1px solid var(--c-gray-200);
+  overflow: hidden;
+  transition: border-color 200ms ease;
+}
+
+.video-card:hover {
+  border-color: var(--c-black);
 }
 
 .video-card video {
@@ -704,6 +791,15 @@ header.site {
   background: #000;
   aspect-ratio: 9/16;
   object-fit: cover;
+  filter: brightness(0.58);
+  transition:
+    filter 300ms ease,
+    transform 400ms ease;
+}
+
+.video-card:hover video {
+  filter: brightness(1);
+  transform: scale(1.05);
 }
 
 .video-card figcaption {

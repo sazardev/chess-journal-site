@@ -1,0 +1,35 @@
+{
+  "name": "Chess Journal — your gamebook for chess",
+  "short_name": "Chess Journal",
+  "description": "Free-to-play chess analysis lab, game library, and study companion. Stockfish, on-device AI commentary, classics, theory, and puzzles.",
+  "start_url": "https://sazardev.github.io/chess-journal-site/",
+  "id": "https://sazardev.github.io/chess-journal-site/",
+  "scope": "https://sazardev.github.io/chess-journal-site/",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "background_color": "#0c0c0d",
+  "theme_color": "#0c0c0d",
+  "categories": ["games", "sports", "education"],
+  "icons": [
+    {
+      "src": "./assets/img/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/img/brand/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/img/brand/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

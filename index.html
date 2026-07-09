@@ -5,22 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chess Journal — your chess analysis lab, library, and study companion</title>
 <meta name="description" content="Chess Journal is free to play on Windows, Linux, and Android — record and import your games, then unlock Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles for a one-time $5, no subscription, ever." />
-<meta name="keywords" content="chess app, free chess app, chess analysis, stockfish, chess study, chess puzzles, chess database, chess engine, offline chess, freemium chess app, no subscription chess app, local ai chess" />
+<meta name="keywords" content="chess app, free chess app, chess analysis app, chess analysis, chess journal, chess opening explorer, chess opening trainer, ECO opening database, chess puzzle trainer, chess puzzles, ajedrez, aplicacion de ajedrez, analisis de ajedrez, stockfish, stockfish analysis, chess study, chess theory, chess database, chess engine, chess engine analysis, offline chess, offline chess app, freemium chess app, no subscription chess app, one-time purchase chess app, local ai chess, on-device ai chess coach, chess coach app, chess pgn viewer, chess pgn editor, chess game import, chess.com import, lichess import, classic chess games, chess for windows, chess for linux, chess for android, tauri chess app, privacy-first chess app" />
+<meta name="author" content="sazardev" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="application-name" content="Chess Journal" />
 <link rel="canonical" href="https://sazardev.github.io/chess-journal-site/" />
+<link rel="sitemap" type="application/xml" href="./sitemap.xml" />
+<link rel="manifest" href="./site.webmanifest" />
+<link rel="icon" href="./favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="./assets/img/brand/favicon.svg" />
 <link rel="apple-touch-icon" href="./assets/img/brand/apple-touch-icon.png" />
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)" />
+<meta name="msapplication-TileColor" content="#0c0c0d" />
+<meta name="msapplication-TileImage" content="https://sazardev.github.io/chess-journal-site/assets/img/brand/icon-512.png" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Chess Journal" />
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Chess Journal" />
 <meta property="og:title" content="Chess Journal — your chess analysis lab, library, and study companion" />
 <meta property="og:description" content="Free to play on Windows, Linux, and Android. A one-time $5 unlocks Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles. No subscription, ever." />
+<meta property="og:url" content="https://sazardev.github.io/chess-journal-site/" />
+<meta property="og:locale" content="en_US" />
 <meta property="og:image" content="https://sazardev.github.io/chess-journal-site/assets/img/brand/og-image.png" />
+<meta property="og:image:secure_url" content="https://sazardev.github.io/chess-journal-site/assets/img/brand/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Chess Journal — your gamebook for chess" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Chess Journal — your chess analysis lab, library, and study companion" />
 <meta name="twitter:description" content="Free to play on Windows, Linux, and Android. A one-time $5 unlocks Stockfish, local AI commentary, 26,000+ games, and 5,000+ puzzles." />
 <meta name="twitter:image" content="https://sazardev.github.io/chess-journal-site/assets/img/brand/og-image.png" />
+<meta name="twitter:image:alt" content="Chess Journal — your gamebook for chess" />
 
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="./assets/css/style.css" />
@@ -28,17 +50,199 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Chess Journal",
-  "applicationCategory": "GameApplication",
-  "operatingSystem": "Windows, Linux, Android",
-  "description": "Free-to-play chess analysis lab, game library, and study companion. A one-time $5 unlock adds Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles.",
-  "url": "https://sazardev.github.io/chess-journal-site/",
-  "offers": [
-    { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free to play" },
-    { "@type": "Offer", "price": "5", "priceCurrency": "USD", "description": "One-time unlock for all pro features" }
-  ],
-  "author": { "@type": "Organization", "name": "sazardev" }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://sazardev.github.io/chess-journal-site/#author",
+      "name": "sazardev",
+      "url": "https://github.com/sazardev",
+      "email": "mailto:sazardev@gmail.com",
+      "sameAs": ["https://github.com/sazardev"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sazardev.github.io/chess-journal-site/#website",
+      "url": "https://sazardev.github.io/chess-journal-site/",
+      "name": "Chess Journal",
+      "description": "Chess Journal is free to play on Windows, Linux, and Android — record and import your games, then unlock Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles for a one-time $5, no subscription, ever.",
+      "inLanguage": "en",
+      "author": { "@id": "https://sazardev.github.io/chess-journal-site/#author" },
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sazardev.github.io/chess-journal-site/#software",
+      "name": "Chess Journal",
+      "alternateName": "Chess Journal — your gamebook for chess",
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "Chess software",
+      "operatingSystem": "Windows, Linux, Android",
+      "softwareVersion": "0.2.22",
+      "datePublished": "2026-06-10",
+      "dateModified": "2026-07-09",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "description": "Free-to-play chess analysis lab, game library, and study companion. A one-time $5 unlock adds Stockfish at full depth, on-device AI commentary, 26,000+ games, and 5,000+ puzzles.",
+      "url": "https://sazardev.github.io/chess-journal-site/",
+      "downloadUrl": "https://sazardev.github.io/chess-journal-site/#download",
+      "screenshot": [
+        "https://sazardev.github.io/chess-journal-site/assets/img/screenshots/desktop/board-game.png",
+        "https://sazardev.github.io/chess-journal-site/assets/img/screenshots/desktop/engine-assist.png",
+        "https://sazardev.github.io/chess-journal-site/assets/img/screenshots/desktop/game-report.png",
+        "https://sazardev.github.io/chess-journal-site/assets/img/screenshots/desktop/library-classics.png",
+        "https://sazardev.github.io/chess-journal-site/assets/img/screenshots/desktop/library-puzzles.png",
+        "https://sazardev.github.io/chess-journal-site/assets/img/screenshots/mobile/board-game.png"
+      ],
+      "featureList": [
+        "Play, record & import games",
+        "Stockfish engine analysis",
+        "On-device AI commentary",
+        "26,000+ game library",
+        "Puzzle system",
+        "Theory / study system",
+        "Assistive Coach",
+        "Opening detection",
+        "Smart natural-language search",
+        "Chess.com & Lichess import",
+        "Board editor",
+        "Theme system"
+      ],
+      "softwareRequirements": "Windows 10+, a modern Linux distribution (AppImage), or Android 8+. Built with Tauri 2 (Rust) and React 19; on-device AI via Transformers.js / llama.cpp.",
+      "offers": [
+        { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free to play — record and import your own games, offline, on every platform", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "price": "5", "priceCurrency": "USD", "description": "One-time unlock for all pro features, forever", "availability": "https://schema.org/InStock" }
+      ],
+      "author": { "@id": "https://sazardev.github.io/chess-journal-site/#author" },
+      "creator": { "@id": "https://sazardev.github.io/chess-journal-site/#author" },
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sazardev.github.io/chess-journal-site/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Chess Journal really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Download it and play — record your games, import from Chess.com or Lichess, browse your library, edit positions, and switch themes, all free forever. A one-time $5 payment unlocks Stockfish's full depth, on-device AI commentary, the Classics and Theory libraries, all 5,037 puzzles, and the Assistive Coach." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I buy the $5 unlock right now?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not yet through this site or the app — the checkout (LemonSqueezy on Windows/Linux, Google Play Billing on Android) is built and tested internally but the storefronts aren't public. Download and use the free tier today; this page and the in-app unlock screen will go live the moment checkout opens." }
+        },
+        {
+          "@type": "Question",
+          "name": "What exactly does the $5 unlock?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Stockfish presets beyond \"Eco\" (Fast, Balanced, Deep, Max), the whole-game analyzer and move-quality report, on-device AI commentary, 9,254 classic games, 11,336 theory games, 5,037 puzzles, the Assistive Coach, PDF export, and the Profile/Opening-stats dashboards. Every future update to any of it is included." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it require internet?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, for both the free and unlocked features — engine analysis, AI commentary, the game library, puzzles, and theory all work offline. Only Chess.com/Lichess import, checkout, and update checks need internet." }
+        },
+        {
+          "@type": "Question",
+          "name": "What platforms are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Windows (installer), Linux (AppImage), Android (APK today, Play Store listing coming) — free to play on all three, same $5 unlock everywhere. iOS/macOS are not currently available." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does AI commentary work without the cloud?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Chess Journal downloads a small language model (Qwen2.5 1.5B or Gemma 3 1B) to your device once you've unlocked it. All inference runs locally via llama.cpp (desktop) or Transformers.js WASM (Android)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data private?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything stays on your device, free tier or unlocked. No telemetry, no analytics, no cloud sync. Your games, your analysis, your data." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I have to pay again for future updates?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Your one-time $5 unlock covers every update Chess Journal ever ships to the unlocked features — new puzzles, new models, all of it. One payment, no renewals." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Chess Journal open source?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — Chess Journal is proprietary, closed-source software." }
+        },
+        {
+          "@type": "Question",
+          "name": "Have feedback or found a bug?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Bug reports and feature requests are always welcome — email sazardev@gmail.com and it'll directly shape what ships next." }
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Welcome — first launch",
+      "description": "A first look at Chess Journal on first launch, rendered from the app's own board.",
+      "thumbnailUrl": "https://sazardev.github.io/chess-journal-site/assets/img/video-posters/chess-journal-welcome.jpg",
+      "contentUrl": "https://sazardev.github.io/chess-journal-site/assets/video/chess-journal-welcome.mp4",
+      "uploadDate": "2026-07-08",
+      "duration": "PT20S",
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Chess Journal — the pitch",
+      "description": "The short pitch for Chess Journal — what it is and who it's for, rendered from the app's own board.",
+      "thumbnailUrl": "https://sazardev.github.io/chess-journal-site/assets/img/video-posters/chess-journal-impact.jpg",
+      "contentUrl": "https://sazardev.github.io/chess-journal-site/assets/video/chess-journal-impact.mp4",
+      "uploadDate": "2026-07-08",
+      "duration": "PT24S",
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Chess Journal — full feature walkthrough",
+      "description": "A complete tour of Chess Journal's board, engine analysis, libraries, puzzles, and export tools.",
+      "thumbnailUrl": "https://sazardev.github.io/chess-journal-site/assets/img/video-posters/chess-journal-demo.jpg",
+      "contentUrl": "https://sazardev.github.io/chess-journal-site/assets/video/chess-journal-demo.mp4",
+      "uploadDate": "2026-07-08",
+      "duration": "PT47S",
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Opening explainer — Ruy Lopez",
+      "description": "A live-board explainer of the Ruy Lopez opening, played out move by move.",
+      "thumbnailUrl": "https://sazardev.github.io/chess-journal-site/assets/img/video-posters/opening-ruy-lopez.jpg",
+      "contentUrl": "https://sazardev.github.io/chess-journal-site/assets/video/opening-ruy-lopez.mp4",
+      "uploadDate": "2026-07-08",
+      "duration": "PT13S",
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Opening explainer — King's Gambit",
+      "description": "A live-board explainer of the King's Gambit opening, played out move by move.",
+      "thumbnailUrl": "https://sazardev.github.io/chess-journal-site/assets/img/video-posters/opening-kings-gambit.jpg",
+      "contentUrl": "https://sazardev.github.io/chess-journal-site/assets/video/opening-kings-gambit.mp4",
+      "uploadDate": "2026-07-08",
+      "duration": "PT11S",
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Classic — Morphy's Opera Game",
+      "description": "Paul Morphy vs. Duke Karl / Count Isouard, Paris Opera 1858, replayed on Chess Journal's own board.",
+      "thumbnailUrl": "https://sazardev.github.io/chess-journal-site/assets/img/video-posters/classic-opera-game.jpg",
+      "contentUrl": "https://sazardev.github.io/chess-journal-site/assets/video/classic-opera-game.mp4",
+      "uploadDate": "2026-07-08",
+      "duration": "PT20S",
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Classic — Byrne vs. Fischer, \"Game of the Century\"",
+      "description": "Donald Byrne vs. Bobby Fischer, New York (Rosenwald) 1956, replayed on Chess Journal's own board.",
+      "thumbnailUrl": "https://sazardev.github.io/chess-journal-site/assets/img/video-posters/classic-game-of-the-century.jpg",
+      "contentUrl": "https://sazardev.github.io/chess-journal-site/assets/video/classic-game-of-the-century.mp4",
+      "uploadDate": "2026-07-08",
+      "duration": "PT20S",
+      "publisher": { "@id": "https://sazardev.github.io/chess-journal-site/#author" }
+    }
+  ]
 }
 </script>
 </head>
@@ -262,46 +466,50 @@
         <p class="lede">Every clip below is rendered from the real piece set and real opening theory — nothing staged in a design tool.</p>
       </div>
 
-      <figure class="video-feature">
-        <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/chess-journal-demo.jpg">
-          <source src="./assets/video/chess-journal-demo.mp4" type="video/mp4" />
+      <figure class="video-hero">
+        <span class="chip chip-solid video-hero-tag">Start here</span>
+        <video muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/img/video-posters/chess-journal-welcome.jpg">
+          <source src="./assets/video/chess-journal-welcome.mp4" type="video/mp4" />
         </video>
-        <figcaption>Chess Journal — full feature walkthrough.</figcaption>
+        <figcaption>Welcome — first launch</figcaption>
       </figure>
 
-      <div class="video-grid">
-        <figure class="video-card">
-          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/chess-journal-welcome.jpg">
-            <source src="./assets/video/chess-journal-welcome.mp4" type="video/mp4" />
-          </video>
-          <figcaption>Welcome — first launch</figcaption>
-        </figure>
-        <figure class="video-card">
-          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/chess-journal-impact.jpg">
+      <div class="video-row">
+        <figure class="video-wide">
+          <video muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/img/video-posters/chess-journal-impact.jpg">
             <source src="./assets/video/chess-journal-impact.mp4" type="video/mp4" />
           </video>
           <figcaption>Chess Journal — the pitch</figcaption>
         </figure>
+        <figure class="video-wide">
+          <video muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/img/video-posters/chess-journal-demo.jpg">
+            <source src="./assets/video/chess-journal-demo.mp4" type="video/mp4" />
+          </video>
+          <figcaption>Full feature walkthrough <span class="chip">Watch in full</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="video-grid">
         <figure class="video-card">
-          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/opening-ruy-lopez.jpg">
+          <video muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/img/video-posters/opening-ruy-lopez.jpg">
             <source src="./assets/video/opening-ruy-lopez.mp4" type="video/mp4" />
           </video>
           <figcaption>Opening explainer — Ruy Lopez</figcaption>
         </figure>
         <figure class="video-card">
-          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/opening-kings-gambit.jpg">
+          <video muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/img/video-posters/opening-kings-gambit.jpg">
             <source src="./assets/video/opening-kings-gambit.mp4" type="video/mp4" />
           </video>
           <figcaption>Opening explainer — King's Gambit</figcaption>
         </figure>
         <figure class="video-card">
-          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/classic-opera-game.jpg">
+          <video muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/img/video-posters/classic-opera-game.jpg">
             <source src="./assets/video/classic-opera-game.mp4" type="video/mp4" />
           </video>
           <figcaption>Classic — Morphy's Opera Game</figcaption>
         </figure>
         <figure class="video-card">
-          <video controls muted loop playsinline preload="auto" poster="./assets/img/video-posters/classic-game-of-the-century.jpg">
+          <video muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" poster="./assets/img/video-posters/classic-game-of-the-century.jpg">
             <source src="./assets/video/classic-game-of-the-century.mp4" type="video/mp4" />
           </video>
           <figcaption>Classic — Byrne vs. Fischer, "Game of the Century"</figcaption>
