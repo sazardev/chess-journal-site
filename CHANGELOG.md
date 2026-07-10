@@ -6,6 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- **Recently Deleted** — deleting a game from the library no longer discards it: it moves into a persistent trash (Sidebar → "Trash (N)") where it stays recoverable for 30 days via Restore, or can be removed for good with "Delete forever" / "Empty trash". The existing 5-second "Undo" toast now restores from this same trash instead of a separate in-memory copy.
+- **Daily streak card** — the Dashboard's home screen shows a "Streak" card (consecutive days with at least one library save) alongside Tip/Shortcut of the day, with your best streak noted underneath once you've broken one. Free for everyone, no gating.
+- **Changelog unread indicator** — the sidebar's version chip now shows a small dot when there's a changelog you haven't opened yet, instead of the "What's New" dialog auto-popping up on every version bump. Clicking the chip opens it and clears the dot.
+- **Weakness breakdown by move number and opening** — Profile's "Weaknesses" section now also buckets your mistakes by move-number range (1–10/11–20/21–30/31+) and by opening, showing only the ranges/openings that run meaningfully worse than your own average. Each has a drill-through: "Study →" jumps to that phase in Theory, "Games →" filters "My games" down to that opening.
+
+### Changed
+- **Dashboard redesigned as a full-height flanked-hero bento** — the home screen no longer scrolls on desktop and no longer leaves large empty gaps at different window sizes. The live board sits centered as the hero cell with the Continue/Start CTA directly beneath it, flanked by a left rail (Start a game, Free tools, Play vs bot / unlock) and a right rail (Recent games, More, Tip, Shortcut). Each rail is a flex column whose cards stretch to fill the full height, so the screen packs edge-to-edge with no dead space regardless of free/Pro tier or how many recent games exist — fewer cards means each grows taller, more cards means each shrinks. Below the `lg` breakpoint (tablets/phones) it collapses to the previous vertical stack (board first) and scrolls, which is the right behaviour on small screens.
+- **Recent games shown as a list** — replaced the grid of centered thumbnails (which left a gap beneath them when only one or two games existed) with compact rows (thumbnail + name + relative time) that fill the card top-to-bottom.
+- **Action tiles enlarged** — the home tiles now use a larger, bolder label so the taller stretched cells read as intentional bento cells rather than sparse buttons.
+
+### Fixed
+- **Dashboard board collapsed and overlapped the tiles on mobile** — on phones the home board was crushed to near-zero height and drawn on top of the "Start a game" tiles instead of being the protagonist. In the stacked (below-`lg`) layout the board cell now uses `flex-none` (so its square reserves real height) and the board column is `shrink-0` (so the definite-height scroll root can't crush it), while `lg` restores the fill-to-height behaviour for the desktop bento. The mobile board is also larger now — a full-width square hero that you scroll past to reach the rest of the home screen.
+- **Dashboard tiles cramped, clipped, and overlapping on small/square screens** — on shorter or narrower desktop windows the home tiles kept their large type and single-word labels like "Beginner"/"Master" got clipped by the neighbouring tile, and when a rail held more cards than fit (e.g. the Pro right rail with Recent + Streak + More + Tip + Shortcut) the cards crushed into each other. Tile type now scales with the viewport (smaller on small/square screens, a dedicated compact size for the dense ELO grid) so labels always fit, and each bento cell keeps its natural minimum height so it can never be crushed below its content — a rail that genuinely can't fit everything now scrolls on its own instead of the cards overlapping, keeping the board hero always visible.
+
 ## [0.2.23] - 2026-07-09
 
 ### Added
