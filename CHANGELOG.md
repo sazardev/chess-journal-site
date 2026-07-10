@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.23] - 2026-07-09
+
+### Added
+- **Batch "Analyze all my games"** — a new engine pass over the entire "My games" library instead of analyzing one game at a time. Drives a single Stockfish worker through every entry not yet analyzed for the current preset, skipping games already covered (same freshness rule as the single-game analyzer) so re-runs after a few new games are fast. Progress tracks at *position* granularity (not just game count), so the bar visibly moves even with only 1-3 games in the library. Lives in a new global store so progress survives navigating between Profile and Settings, and only one batch/worker can run at a time. Exposed via a shared `LibraryAnalyzeButton` in desktop Settings, mobile Settings, and inside the Profile "Training plan" empty state (as a one-click alternative to analyzing games individually).
+- **Zen mode (`Ctrl+Shift+F`)** — collapses the sidebar, the sidebar's nav row, and the right game panel together in one keystroke for a distraction-free board. Restores exactly what was visible before entering zen when toggled off again; manually adjusting any of the three panels while zen is active exits zen instead of fighting the user's change.
+- **Sidebar "hide nav" toggle** — a new chevron button in the sidebar footer hides the nav row (New game, Settings, Profile...) independently of Zen mode, freeing vertical room for the game list/history.
+- **Dashboard: "Play vs bot" and richer home screen** — the home Dashboard is now a two-column bento layout with the live board as its hero cell (see Changed below), plus new "Start a game" (Play as White/Black, free for everyone), "Free tools" (Board editor, Settings), "Play vs bot" (Beginner through GM difficulty presets, Pro-gated), and "More" (Puzzle, Classic game, Analysis report, Opening stats, Pro-gated) sections, and "Tip of the day"/"Shortcut of the day" cards at the bottom.
+
+### Changed
+- **Dashboard board never unmounts** — the live board is now passed into `Dashboard` as a prop from `App.tsx` and stays mounted continuously; the Dashboard's own sections use `display:contents` wrappers to disappear from layout (not the DOM) when closed. Previously the board component was swapped in and out of the tree whenever the Dashboard opened/closed, which is what made its grow/shrink transition pop instead of animate.
+- **Mobile bottom nav stays visible with the Dashboard open** — it used to hide along with the rest of normal-mode chrome, leaving no way back to an in-progress game short of the Home icon buried in the Library overlay. Tapping a bottom-nav tab while the Dashboard is open now dismisses it and reveals that panel directly.
+- **Profile is now free for everyone** — removed the Pro gate on the sidebar's Profile nav item; it always opens the Profile page directly instead of routing free users through the unlock flow.
+- **`tsc -b` now runs on native TypeScript 7** — `npm run typecheck`/`build`/`check` invoke a second, aliased `typescript-native` devDependency (`npm:typescript@^7.0.2`) by its binary path. Its native Go port is ~12x faster (7.15s → 0.60s on a clean build) but ships no JS API, so the regular `typescript` package stays on `~6.0.2` for `typescript-eslint` and `vite-plugin-checker`, which still need it.
+- Extracted shared UCI-driving helpers (`waitForUci`, `analyzePosition`) out of `useGameAnalyzer` into `src/lib/engineAnalysis.ts` so the single-game and whole-library analyzers share one implementation instead of duplicating it.
+- Raised the engine analysis cache cap from 25 to 300 (game, preset) entries — the old cap was fine for interactive single-game use but would silently evict earlier results mid-run during a full-library batch analysis.
+
 ## [0.2.22] - 2026-07-08
 
 ## [0.2.21] - 2026-07-07
