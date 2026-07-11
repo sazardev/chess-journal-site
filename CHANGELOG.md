@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.26] - 2026-07-11
+
+### Added
+- **Local retention notifications (Android)** — a new "Notifications" toggle in Settings (opt-in, free for everyone) schedules two reminders via `@tauri-apps/plugin-notification`: a "streak at risk" nudge (evening, only if you haven't played today and have an active daily streak) and an "inactive 7 days" nudge (a week after your last save). Both are cancelled and rescheduled fresh on every app launch against your current library, so they never fire stale or duplicate. Requests the Android 13+ notification permission only when you turn the toggle on, never proactively. Notifications show the app's own bishop icon instead of a generic system icon.
+- **Native Android share sheet** — "Share recap" now opens the real Android share chooser (`Intent.ACTION_SEND`, e.g. straight to WhatsApp/Gmail/Drive) instead of the "save a file" dialog, via a small native bridge reusing the app's existing FileProvider. Falls back to the previous save-a-file behavior unchanged on desktop/iOS/web.
+- **Editor and Share now available on mobile** — both were previously desktop-only (tucked in a right-hand panel hidden below the tablet/desktop breakpoint). They now appear as the same collapsible footers under whichever bottom-nav tab (Moves/Engine/Assist) is open, sharing one implementation with desktop so both stay in sync going forward.
+
+### Fixed
+- **Sidebar/Settings full-screen overlays on Android could render under the status bar** — the existing safe-area padding used the raw `env(safe-area-inset-top)` value with no fallback, and some WebViews report that as 0 even while the status bar is visible. Both overlays now floor it at 2rem, matching how the title bar already handled the same situation.
+- **Notifications could silently never fire** — the scheduling check read whether notifications were enabled before that setting had actually finished loading from disk on app launch (a race between two independent startup effects), so a real reminder could be skipped without any error. Fixed by waiting on both stores before scheduling.
+
 ## [0.2.25] - 2026-07-11
 
 ### Added
