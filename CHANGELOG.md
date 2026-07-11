@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.25] - 2026-07-11
+
+### Added
+- **Android app icon fixed** — the launcher, home screen, and widget picker now show the real bishop icon instead of Tauri's default logo. `npx tauri icon` had never been run against the regenerated `gen/android` project, so every Android icon asset was still the placeholder.
+- **Expanded Android widget library, 1 → 7 widgets** — Tip of the Day is now four genuinely distinct layouts (1×1 icon badge, 2×1 one-line row, 3×1 wide, 3×2 card) instead of one resizable widget, plus three new one-tap action widgets: Continue Game, Play as White, Play as Black. All 7 read the system's light/dark setting automatically (`values`/`values-night` color resources — no toggle, no extra code) and tapping any of them opens the app via the same shortcut-dispatch bridge used by the long-press app-shortcuts menu.
+
+### Fixed
+- **Widget/shortcut actions (Continue, Play White, Play Black, and the existing New Game/Puzzles/Classics app shortcuts) could be silently discarded on cold start** — `initAndroidShortcuts()` ran immediately after Tauri's plugins initialized, but a separate restore-on-launch effect later overwrote `orientation`/game state from the persisted autosave *after* the shortcut had already run, clobbering whatever the widget/shortcut tap had just set. Fixed by deferring the shortcut dispatch until the restore effect actually settles, so a widget/shortcut action now always applies on top of the restored state instead of racing it.
+
 ## [0.2.24] - 2026-07-11
 
 ### Added
