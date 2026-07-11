@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.24] - 2026-07-11
+
 ### Added
 - **Recently Deleted** — deleting a game from the library no longer discards it: it moves into a persistent trash (Sidebar → "Trash (N)") where it stays recoverable for 30 days via Restore, or can be removed for good with "Delete forever" / "Empty trash". The existing 5-second "Undo" toast now restores from this same trash instead of a separate in-memory copy.
 - **Daily streak card** — the Dashboard's home screen shows a "Streak" card (consecutive days with at least one library save) alongside Tip/Shortcut of the day, with your best streak noted underneath once you've broken one. Free for everyone, no gating.
@@ -22,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - The Share panel and the "What's New" changelog no longer add to the app's startup load time — both now load only when you actually open them.
 
 ### Fixed
+- **Save reliability hardened against crashes and disk/quota failures** — every game/library write now goes through a temp-file-then-rename so a crash or forced quit mid-write can no longer leave a corrupted game or library index; a write that fails on both the on-disk path and the localStorage fallback now flips the save indicator to "Save failed" instead of silently claiming success; and quitting the desktop app now waits for the last autosave/library write to actually land before the window closes, instead of racing the process teardown.
 - **Dashboard board collapsed and overlapped the tiles on mobile** — on phones the home board was crushed to near-zero height and drawn on top of the "Start a game" tiles instead of being the protagonist. In the stacked (below-`lg`) layout the board cell now uses `flex-none` (so its square reserves real height) and the board column is `shrink-0` (so the definite-height scroll root can't crush it), while `lg` restores the fill-to-height behaviour for the desktop bento. The mobile board is also larger now — a full-width square hero that you scroll past to reach the rest of the home screen.
 - **Dashboard tiles cramped, clipped, and overlapping on small/square screens** — on shorter or narrower desktop windows the home tiles kept their large type and single-word labels like "Beginner"/"Master" got clipped by the neighbouring tile, and when a rail held more cards than fit (e.g. the Pro right rail with Recent + Streak + More + Tip + Shortcut) the cards crushed into each other. Tile type now scales with the viewport (smaller on small/square screens, a dedicated compact size for the dense ELO grid) so labels always fit, and each bento cell keeps its natural minimum height so it can never be crushed below its content — a rail that genuinely can't fit everything now scrolls on its own instead of the cards overlapping, keeping the board hero always visible.
 - **Hardened the local-AI (desktop) engine/model commands against a crafted file name** — `ai_model_exists`/`ai_remove`/`ai_download`/`ai_start` now reject anything but a plain file name, closing a path-traversal gap that could otherwise reach files outside the app's data directory.
