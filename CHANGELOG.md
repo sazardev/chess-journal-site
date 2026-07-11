@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.28] - 2026-07-11
+
+### Changed
+- **Scan Board's color detection is now adaptive instead of a fixed brightness cutoff** — light/dark pieces are now told apart by comparing them to each other across the whole board (Otsu's method over the occupied squares), not by comparing each square to a fixed absolute brightness. A fixed cutoff couldn't survive a real photo's actual exposure (bright sun vs. a dim room); the adaptive version can. Occupancy detection also now samples all 4 edges of a square as its background reference instead of just the top edge, reducing one specific failure mode (a tall piece near the camera visually bleeding into its own square's top edge after the perspective warp).
+
+## [0.2.27] - 2026-07-11
+
+### Added
+- **"Scan board" (Android, Pro)** — a new "Scan board" button in the board editor (next to Start position/Clear board/Flip) lets you photograph a physical chess board and load the detected position straight into the editor instead of placing every piece by hand. You tap the board's 4 corners on the photo, confirm which side is closest to the camera, and the app detects which squares are occupied and each piece's color (classical image analysis, no AI model, fully offline) — piece *type* can't be told this way, so every detected piece loads as a placeholder of the right color for you to correct in the same drag-and-drop editor you already know. Gated behind the existing $5 unlock, and only shown on Android (the only platform with a camera).
+
 ## [0.2.26] - 2026-07-11
 
 ### Added
