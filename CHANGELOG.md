@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.34] - 2026-07-11
+
+### Fixed
+- **Scan Board's "Take photo" could still get the whole app killed by Android's low-memory killer, even with largeHeap (v0.2.33)** — that fix only proved the theory (the checkpoint fired on the next launch), it didn't remove the memory pressure causing it. The WebView's `<input capture="environment">` flow is replaced with a native camera bridge (`__CJ_CAMERA__`, patched into `MainActivity.kt`): the system camera launches directly via `ActivityResultContracts.TakePicture()`, and the photo is decoded and downscaled natively (`BitmapFactory.inSampleSize`, capped at 1600px) before its bytes ever reach the WebView — the full-resolution photo no longer has to pass through the same heavy process the killer was targeting. Falls back to the old `<input capture>` flow when the bridge isn't present (desktop/dev).
+
 ## [0.2.33] - 2026-07-11
 
 ### Fixed
