@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.31] - 2026-07-11
+
+### Fixed
+- **Scan Board could crash the whole app back to the home screen** — a real phone camera photo (often 3000-4000px+ per side) was processed at full resolution: a same-size canvas plus a full pixel-buffer copy needs 100+ MB alive at once, enough to make an Android WebView renderer run out of memory and restart the app with everything lost. Every captured photo is now downscaled (capped at 1600px on the longest side) before anything else touches it — far more resolution than the analysis needs, and no longer enough to threaten the renderer's memory budget.
+- **A pre-existing Rust compile error in the desktop-only AI module (`ai.rs`) would have broken the next Windows/Linux build** — a missing lifetime annotation on an internal helper. Never caught because recent releases only built for Android. Fixed; unrelated to any Android-specific work.
+
+### Added
+- **Crash-resilient logging** — the in-app Debug Log used to live only in memory, so the exact kind of native crash described above wiped it out along with everything else, leaving no trace to diagnose. Warn/error log entries are now also mirrored to durable storage as they happen, survive a hard crash/reload, and are folded back into the Debug Log (tagged "[prior session]") the next time the app starts. A "checkpoint" is recorded immediately before each risky step in the Scan Board pipeline (photo downscale, perspective warp, per-square analysis) and cleared right after — if the app never gets that far, the next launch reports exactly which step it was on when it went down, the closest thing to a stack trace this app can produce for a crash that bypasses every JS-level error handler. A React error boundary was also added around the whole app (previously none existed anywhere) — a render-time bug now shows a small recovery screen instead of a blank white screen, and gets logged the same durable way.
+
+## [0.2.30] - 2026-07-11
+
+### Added
+- **24h trial code (Android)** — a single fixed code, redeemable once per device from Settings → "Trial", unlocks Pro for 24h before Play Billing is live. Testing convenience, not an anti-piracy mechanism — see LOCK_UNLOCK.md for the honest caveats.
+
+## [0.2.29] - 2026-07-11
+
 ## [0.2.28] - 2026-07-11
 
 ### Changed
