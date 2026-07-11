@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.32] - 2026-07-11
+
+### Fixed
+- **Scan Board's "Take photo" silently did nothing on a real device** — confirmed via the new crash-resilient logging (v0.2.31): the photo was picked but its decode failed immediately, and the resulting error was only ever shown on a later step's screen, never on the capture screen the user was actually looking at, so it looked like nothing happened. The decode itself now goes through `createImageBitmap` instead of an `<img>`/`blob:` URL — the previous path could be silently rejected by CSP's `img-src` on some Android WebView builds, and `blob:` was missing from that policy outright (added as defense-in-depth even though the new decode path no longer depends on it). Any capture error now also shows immediately on the capture screen itself, not just later steps.
+
 ## [0.2.31] - 2026-07-11
 
 ### Fixed
