@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.33] - 2026-07-11
+
+### Fixed
+- **Scan Board could still get killed by Android mid-capture on some devices, this time with zero trace anywhere** — a field report showed the screen going black and the app relaunching to the home screen right after confirming a photo in the native camera app, with the fresh session's Debug Log showing nothing about it at all. Consistent with Android's low-memory killer terminating the app process while the camera app was in the foreground, before any JS ever ran to log it. `android:largeHeap="true"` is now set (it wasn't before — not something the OS turns on for you), raising the memory ceiling available to the whole app. A checkpoint is also now recorded the instant "Take photo" is tapped, before handing off to the native camera/file chooser, and only cleared once JS regains control — so if this happens again, the next launch's Debug Log will say so explicitly instead of showing nothing.
+
 ## [0.2.32] - 2026-07-11
 
 ### Fixed
