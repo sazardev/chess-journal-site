@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.35] - 2026-07-12
+
+### Fixed
+- **Scan Board's native camera bridge (v0.2.34) was completely broken — "Take photo" did nothing** — the JS side called `window.__CJ_CAMERA__?.capture` into a local variable and invoked that, which detaches the method from its receiver; Android's WebView bridge throws for any call that isn't `obj.method()` directly. Fixed by keeping the call attached.
+- **Even after that fix, the app could still get killed on the return trip from the camera** (the same low-memory-killer class of issue as the v0.2.31-33 arc, just showing up backgrounded instead of during the outbound hand-off) — the native side now persists the pending photo across a process restart and delivers it once the app comes back up, the same cold-start-recovery pattern already used for App Shortcuts.
+- **The 4 corner-tap handles had no visible label** — only an invisible aria-label distinguished them, so tapping the right corners in the wrong order silently scrambled the whole detected board (which read as "the algorithm is just wrong"). Handles are now numbered 1-4 with explicit instructions on which corner each goes to.
+
+### Added
+- **A "Processing board…" step** during the camera hand-off and photo decode/downscale, so Scan Board doesn't look stuck or broken while that work happens.
+
 ## [0.2.34] - 2026-07-11
 
 ### Fixed
