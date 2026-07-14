@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.36] - 2026-07-14
+
+### Added
+- **New 12-month promo code** — alongside the existing 24h trial code, a second fixed code now grants Pro for a full year on the device that redeems it (Android, Settings → Trial). Each code has its own one-time-per-device redemption, independent of the other.
+
 ## [0.2.35] - 2026-07-12
 
 ### Fixed
